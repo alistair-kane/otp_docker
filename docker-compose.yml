@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+otp-graph-builder:
+image: opentripplanner/opentripplanner:2.8.0_2025-09-10T08-57
+container_name: otp-warsaw-graph-builder
+command: --build --save
+environment:
+- JAVA_OPTIONS=-Xmx10G
+volumes:
+- ./data:/var/opentripplanner
+# graph-builder runs, creates graph.obj in ./data, then exits (no restart)
+
+
+otp-app:
+image: opentripplanner/opentripplanner:2.8.0_2025-09-10T08-57
+container_name: otp-warsaw-app
+command: --load --serve
+environment:
+- JAVA_OPTIONS=-Xmx6G
+volumes:
+- ./data:/var/opentripplanner
+ports:
+- '8080:8080'
+depends_on:
+- otp-graph-builder
+restart: unless-stopped
