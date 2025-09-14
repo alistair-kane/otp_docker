@@ -1,10 +1,8 @@
 {
 	"osm": [
 	  {
-		"source": "mazowieckie-latest.osm.pbf"
+		"source": "mazowieckie-latest.osm.pbf",
+		"osmCacheDataInMem": true
 	  }
-	],
-	"transferRequests": {
-	  "numThreads": 4
-	}
+	]
   }
