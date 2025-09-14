@@ -1,6 +1,6 @@
 services:
   otp-graph-builder:
-    image: opentripplanner/opentripplanner:2.8.0_2025-09-10T08-57
+    image: opentripplanner/opentripplanner
     container_name: otp-warsaw-graph-builder
     command: java -Xmx10G -jar /otp.jar --build --save
     volumes:
@@ -8,7 +8,7 @@ services:
     # graph-builder runs, creates graph.obj in ./data, then exits (no restart)
 
   otp-app:
-    image: opentripplanner/opentripplanner:2.8.0_2025-09-10T08-57
+    image: opentripplanner/opentripplanner
     container_name: otp-warsaw-app
     command: java -Xmx10G -jar /otp.jar --load --serve
     volumes:
