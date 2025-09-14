@@ -1,4 +1,3 @@
-version: '3.7'
 services:
   otp-graph-builder:
     image: opentripplanner/opentripplanner:2.8.0_2025-09-10T08-57
