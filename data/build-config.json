@@ -1,0 +1,8 @@
+{
+	"osm": {
+	  "buildStreetGraph": true
+	},
+	"transferRequests": {
+	  "numThreads": 4
+	}
+  }
