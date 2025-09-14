@@ -3,8 +3,8 @@ services:
     image: opentripplanner/opentripplanner
     container_name: otp-warsaw-graph-builder
     command: --build --save
-    # environment:
-      # - JAVA_OPTIONS=-Xmx12G
+    environment:
+      - JAVA_OPTIONS=-Xmx10G -Xms8G
     volumes:
     - ./data:/var/opentripplanner
     # graph-builder runs, creates graph.obj in ./data, then exits (no restart)
@@ -13,8 +13,8 @@ services:
     image: opentripplanner/opentripplanner
     container_name: otp-warsaw-app
     command: --build --serve
-    # environment:
-      # - JAVA_OPTIONS=-Xmx8G
+    environment:
+      - JAVA_OPTIONS=-Xmx8G -Xms6G
     volumes:
     - ./data:/var/opentripplanner
     ports:
