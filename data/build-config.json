@@ -1,7 +1,9 @@
 {
-	"osm": {
-	  "buildStreetGraph": true
-	},
+	"osm": [
+	  {
+		"source": "mazowieckie-latest.osm.pbf"
+	  }
+	],
 	"transferRequests": {
 	  "numThreads": 4
 	}
